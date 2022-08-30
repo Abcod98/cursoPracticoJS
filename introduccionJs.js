@@ -12,8 +12,19 @@ let deudas = 100;
 let dineroReal = dineroAhorrado - deudas;
 
 // Concatenando strings (Nombre Completo)
-let nombreCompleto = nombre + " " + apellido;
+let completeName = nombre + " " + apellido;
 
 // Imprimiendo valores
 console.log ("El dinero real es: " + dineroReal);
-console.log ("El nombre completo es: " + nombreCompleto);
+console.log ("El nombre completo es: " + completeName);
+
+// Funciones
+function nombreCompleto (name, lastname) {
+    return name + " " + lastname;
+} 
+
+function saludo (name, lastname, nickname) {
+    const completeName = nombreCompleto(name, lastname);
+
+console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+}
