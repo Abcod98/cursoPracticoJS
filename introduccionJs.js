@@ -91,3 +91,35 @@ while (respuesta !=4) {
         alert("Respuesta correcta");
     }
 }
+
+// Listas y Objetos
+// Arrays
+const array = [1,"Mensaje", true, // Podemos guardar cualquier tipo de dato
+{nombre:"Abraham", edad: 23} // Los arrays tambien permiten guardar objetos
+]
+
+// Objetos
+const obj = { // En los objetos debemos nombrar a nuestros elementos
+    nombre: "Abraham",
+    edad: 23,
+    cursos: ["JavaScript","Videojuegos"]// Los objetos pueden contener arrays
+}
+
+// Imprimir valores de array
+function imprimirValoresArray(arr) {
+    console.log(arr[0]); // Imprime sus valores por pocicion
+}
+
+function imprimirElementoPorElemento(arr) {
+    for (i=0; i<arr.length; i++) { // con .length nos da la catidad de elementos
+        console.log("Posicion: " + i + " Valor: " + arr[i]); // imprime sus valores uno por uno
+    }
+}
+
+// Imprimir valores de un objeto
+function imprimirElementoPorElementoObjeto (obj) {
+    const arr = Object.values(obj);
+    for (i=0; i<arr.length; i++) {
+        console.log(arr[i]);
+    }
+}
