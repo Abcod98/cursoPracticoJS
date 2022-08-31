@@ -58,3 +58,36 @@ if (tipoDeSuscripcion == "Free") {
 } else {
     console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"); 
 }
+
+// Ciclos
+// For
+for (let i=0; i<5; i++) { // Tenemos la variable, la condicion y un contador que aumenta
+    console.log("El valor de i es: " + i);
+}
+
+for (let i=10; i>=2; i--) {// Tenemos la variable, la condicion y un contaodar que disminuye
+    console.log("El valor de i es: " +i);
+}
+
+// While
+let i=0; // En while se declara primero la variable a utilizar
+while (i < 5) { // Tenemos la condicion
+    console.log("El valor de i es: " + i);
+    i++; // Contador en aumento
+}
+
+i = 10; // Ya declarada la variable solo combiamos su valor
+while (i>=2) {// Tenemos la condicion
+    console.log("El valor de i es: " +i);
+    i--;// Contador disminuyendo
+}
+
+// Usando promt en un ciclo
+let respuesta;
+while (respuesta !=4) {
+    let pregunta = prompt("¿Cuanto es 2 + 2?");
+    respuesta = pregunta;
+    if (respuesta == 4) {
+        alert("Respuesta correcta");
+    }
+}
