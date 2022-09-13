@@ -5,29 +5,95 @@ const desktopMenu = document.querySelector('.desktop-menu')
 const mobileMenu = document.querySelector('.mobile-menu')
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer')
 const cardsContainer = document.querySelector('.cards-container')
+const productDetailContainer = document.querySelector('#productDetail')
+const closeProductDetailContainer = document.querySelector('.product-detail-close')
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuListIcon.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoAside);
+closeProductDetailContainer.addEventListener('click', toggleCloseProductContainer);
 
 
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle('inactive')
     shoppingCartContainer.classList.add('inactive')
+    productDetailContainer.classList.add('inactive')
 }
 
 function toggleMobileMenu() {
     mobileMenu.classList.toggle('inactive')
     shoppingCartContainer.classList.add('inactive')
+    productDetailContainer.classList.add('inactive')
 }
 
 function toggleCarritoAside() {
     shoppingCartContainer.classList.toggle('inactive')
     mobileMenu.classList.add('inactive')
     desktopMenu.classList.add('inactive')
+    productDetailContainer.classList.add('inactive')
+}
+
+function openProductDetailAside () {
+    productDetailContainer.classList.remove('inactive');
+    shoppingCartContainer.classList.add('inactive');
+    desktopMenu.classList.add('inactive')
+}
+
+function toggleCloseProductContainer () {
+    productDetailContainer.classList.add('inactive');
 }
 
 const productList = [];
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
+productList.push({
+    name: "Bike",
+    price: 120,
+    image: "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+})
 productList.push({
     name: "Bike",
     price: 120,
@@ -65,6 +131,7 @@ function rendersProducts (arr) {
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openProductDetailAside)
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
